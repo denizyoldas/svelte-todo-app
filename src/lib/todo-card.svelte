@@ -44,6 +44,7 @@
     border: 1px solid black;
     border-radius: 16px;
     width: 600px;
+    height: 450px;
     background-color: #F9F7F7;
     display: flex;
     flex-direction: column;
@@ -53,10 +54,14 @@
 
   .todo-list {
     margin-top: 12px;
+    padding-top: 16px;
     width: 500px;
     height: 400px;
     overflow-y: auto;
     border-top: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .input {

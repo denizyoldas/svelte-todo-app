@@ -19,14 +19,20 @@
   <div class="content">
     <h3 class:is-done={isDone}>{text}</h3>
   </div> 
+
+  <div class="action">
+
+  </div>
 </div>
 
 <style>
   .todo-item {
     display: flex;
-    padding: 12px 16px;
+    padding: 20px;
     align-items: center;
     justify-content: space-between;
+    background-color: #DBE2EF;
+    border-radius: 5px;
   }
 
   .content {
