@@ -1,5 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte'
+  import IoMdTrash from 'svelte-icons/io/IoMdTrash.svelte'
+
   export let isDone = false;
   export let text = "Todo Item"
 
@@ -21,7 +23,9 @@
   </div> 
 
   <div class="action">
-
+    <button on:click={() => dispatch('delete')}>
+      <IoMdTrash />
+    </button>
   </div>
 </div>
 
@@ -51,5 +55,23 @@
     width: 24px;
     height: 24px;
     color: green;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .action button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+  }
+
+  .action button:hover {
+    color: red;
   }
 </style>

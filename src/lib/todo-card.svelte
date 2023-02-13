@@ -16,8 +16,12 @@
 
   function addNewTodoKeydown(e) {
     if(e.keyCode === 13) {
-    addNewToDo()
+      addNewToDo()  
+    }
   }
+
+  function deleteTodoItem(i) {
+    TODO_LIST = TODO_LIST.filter((_, index) => index !== i)
   }
 </script>
 
@@ -29,8 +33,12 @@
   </div>
 
   <div class="todo-list">
+    {#if TODO_LIST.length === 0}
+      <h3>There is no todo item</h3>
+    {/if}
+
     {#each TODO_LIST as todo, i}
-    <TodoItem {...todo} />
+    <TodoItem {...todo} on:delete={() => {deleteTodoItem(i)}} />
     {/each}
   </div>
 </div>
@@ -81,7 +89,7 @@
   .input button {
     background-color: #3F72AF;
     border: none;
-    text: white;
+    color: white;
     font-size: 36px;
     padding: 4px 10px;
     border-radius: 0 5px 5px 0;
